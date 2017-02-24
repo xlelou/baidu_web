@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>echarts</title>
+	<script src='./js/echarts.simple.min.js'></script>
+	<style>
+		#box{
+			width: 600px;
+			height: 600px;
+			float: left;
+		}
+		#cri{
+			width: 600px;
+			height: 600px;
+			float: right;
+		}
+		h1{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>本日牙膏牙刷销量</h1>
+	<div id="box">
+		
+	</div>
+	<div id="cri">
+		
+	</div>
+</body>
+
+<script>
+	var box = echarts.init(document.getElementById('box'))
+	var cri = echarts.init(document.getElementById('cri'))
+	var option = {
+		title:　{
+			text: '前端作业'
+		},
+		legend:{
+			data:['销量']
+		},
+		xAxis: {
+			data: ['牙刷','牙膏']
+		},
+		yAxis: {
+
+		},
+		series:[{
+			name: '销量',
+			type:'bar',
+			data:[5,20]
+		}]
+	}
+	cri.setOption({
+    series : [
+        {
+            name: '总体对比',
+            type: 'pie',
+            radius: '55%',
+            data:[
+                {value:5, name:'牙刷'},
+                {value:20, name:'牙膏'}
+            ]
+        }
+    ]
+})
+	box.setOption(option)
+</script>
+</html>
